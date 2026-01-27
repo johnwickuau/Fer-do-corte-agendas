@@ -1,0 +1,295 @@
+/* ==================== VARIÁVEIS GLOBAIS ==================== */
+:root {
+    --cor-primaria: #ff6600;
+    --cor-secundaria: #333333;
+    --cor-fundo: #ffffff;
+    --cor-fundo-alt: #f8f8f8;
+    --cor-texto: #333333;
+    --cor-cinza-claro: #e0e0e0;
+    --sombra-leve: 0 4px 12px rgba(51, 51, 51, 0.08);
+    --sombra-media: 0 8px 24px rgba(51, 51, 51, 0.15);
+    --sombra-forte: 0 12px 40px rgba(255, 102, 0, 0.2);
+    --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== RESET GLOBAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================== TÍTULO ==================== */
+h1 {
+    position: absolute;
+    top: 60px;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+/* ==================== CONTAINER PRINCIPAL ==================== */
+.dados {
+    background: var(--cor-fundo);
+    padding: 65px 50px;
+    border-radius: 16px;
+    box-shadow: var(--sombra-media);
+    width: 100%;
+    max-width: 420px;
+    margin-top: 20px;
+    border: 1px solid rgba(51, 51, 51, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de borda decorativa superior */
+.dados::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cor-primaria), #e55a00);
+    border-radius: 16px 16px 0 0;
+}
+
+/* ==================== LABELS ==================== */
+label {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+/* ==================== INPUTS ==================== */
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    border: 2px solid var(--cor-cinza-claro);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-alt);
+    transition: var(--transicao);
+    font-family: inherit;
+}
+
+input:hover {
+    border-color: #d0d0d0;
+    background-color: var(--cor-fundo);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    background-color: var(--cor-fundo);
+    box-shadow: 0 0 0 5px rgba(255, 102, 0, 0.12);
+}
+
+input::placeholder {
+    color: #999999;
+    font-weight: 400;
+}
+
+/* ==================== BOTÃO ==================== */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, #e55a00 100%);
+    color: var(--cor-fundo);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicao);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito ripple no botão */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #e55a00 0%, #cc4d00 100%);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+}
+
+/* ==================== LINK DO BOTÃO ==================== */
+a {
+    text-decoration: none;
+    display: block;
+}
+
+/* ==================== BREAK ==================== */
+br {
+    display: none;
+}
+
+/* ==================== ANIMAÇÃO DE ENTRADA ==================== */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dados {
+    animation: slideUp 0.6s var(--transicao);
+}
+
+h1 {
+    animation: slideUp 0.6s var(--transicao) 0.1s backwards;
+}
+
+/* ==================== RESPONSIVO - TABLET ==================== */
+@media (max-width: 600px) {
+    h1 {
+        position: static;
+        margin-bottom: 30px;
+        font-size: 26px;
+    }
+
+    .dados {
+        padding: 40px 30px;
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input {
+        padding: 12px 14px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 13px;
+        font-size: 14px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* ==================== RESPONSIVO - MOBILE ==================== */
+@media (max-width: 400px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .dados {
+        padding: 35px 20px;
+        border-radius: 14px;
+    }
+
+    label {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    input {
+        padding: 11px 13px;
+        font-size: 13px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+}
+
+/* ==================== DARK MODE (OPCIONAL) ==================== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+
+    .dados {
+        background: #2d2d2d;
+        border-color: rgba(255, 102, 0, 0.15);
+    }
+
+    h1, label {
+        color: var(--cor-primaria);
+    }
+
+    input {
+        background-color: #3d3d3d;
+        border-color: #4d4d4d;
+        color: #ffffff;
+    }
+
+    input:focus {
+        background-color: #2d2d2d;
+        box-shadow: 0 0 0 5px rgba(255, 102, 0, 0.2);
+    }
+
+    input::placeholder {
+        color: #888888;
+    }
+}
