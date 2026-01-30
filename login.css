@@ -1,295 +1,134 @@
-/* ==================== VARIÁVEIS GLOBAIS ==================== */
-:root {
-    --cor-primaria: #ff6600;
-    --cor-secundaria: #333333;
-    --cor-fundo: #ffffff;
-    --cor-fundo-alt: #f8f8f8;
-    --cor-texto: #333333;
-    --cor-cinza-claro: #e0e0e0;
-    --sombra-leve: 0 4px 12px rgba(51, 51, 51, 0.08);
-    --sombra-media: 0 8px 24px rgba(51, 51, 51, 0.15);
-    --sombra-forte: 0 12px 40px rgba(255, 102, 0, 0.2);
-    --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ==================== RESET GLOBAL ==================== */
+/* Reset geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* Body */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-    color: var(--cor-texto);
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
     padding: 20px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==================== TÍTULO ==================== */
-h1 {
-    position: absolute;
-    top: 60px;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--cor-secundaria);
-    letter-spacing: -0.5px;
-    margin: 0;
-}
-
-/* ==================== CONTAINER PRINCIPAL ==================== */
-.dados {
-    background: var(--cor-fundo);
-    padding: 65px 50px;
-    border-radius: 16px;
-    box-shadow: var(--sombra-media);
-    width: 100%;
-    max-width: 420px;
-    margin-top: 20px;
-    border: 1px solid rgba(51, 51, 51, 0.05);
+/* Título principal */
+body > h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
     position: relative;
-    overflow: hidden;
 }
 
-/* Efeito de borda decorativa superior */
-.dados::before {
+body > h1::after {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--cor-primaria), #e55a00);
-    border-radius: 16px 16px 0 0;
-}
-
-/* ==================== LABELS ==================== */
-label {
     display: block;
-    color: var(--cor-secundaria);
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    width: 80px;
+    height: 3px;
+    background-color: #ff6600;
+    margin: 10px auto 0;
+}
+
+/* Container do login */
+.dados {
+    max-width: 450px;
+    width: 1000px;
+    padding: 60px;
+    background-color: #666666af;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #f86707;
+}
+
+/* Labels */
+.dados label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 15px;
+    letter-spacing: 0.5px;
 }
 
-label:first-of-type {
-    margin-top: 0;
-}
-
-/* ==================== INPUTS ==================== */
-input {
+/* Inputs */
+.dados input[type="email"],
+.dados input[type="password"] {
     width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 22px;
-    border: 2px solid var(--cor-cinza-claro);
-    border-radius: 10px;
-    font-size: 15px;
-    color: var(--cor-texto);
-    background-color: var(--cor-fundo-alt);
-    transition: var(--transicao);
-    font-family: inherit;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
 }
 
-input:hover {
-    border-color: #d0d0d0;
-    background-color: var(--cor-fundo);
+/* Placeholder */
+.dados input::placeholder {
+    color: #aaa;
 }
 
-input:focus {
+/* Focus */
+.dados input:focus {
     outline: none;
-    border-color: var(--cor-primaria);
-    background-color: var(--cor-fundo);
-    box-shadow: 0 0 0 5px rgba(255, 102, 0, 0.12);
+    border-color: #ff6600;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.2);
 }
 
-input::placeholder {
-    color: #999999;
-    font-weight: 400;
-}
-
-/* ==================== BOTÃO ==================== */
-button {
+/* Botão */
+.dados button {
     width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    background: linear-gradient(135deg, var(--cor-primaria) 0%, #e55a00 100%);
-    color: var(--cor-fundo);
+    padding: 14px;
+    background-color: #333;
+    color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    transition: var(--transicao);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.25);
+    letter-spacing: 1px;
     position: relative;
     overflow: hidden;
 }
 
-/* Efeito ripple no botão */
-button::before {
+/* Efeito hover */
+.dados button::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ff6600;
+    transition: left 0.3s ease;
+    z-index: -1;
 }
 
-button:hover {
-    background: linear-gradient(135deg, #e55a00 0%, #cc4d00 100%);
-    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.35);
+.dados button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-button:active {
+.dados button:hover::before {
+    left: 0;
+}
+
+.dados button:active {
     transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
 }
 
-/* ==================== LINK DO BOTÃO ==================== */
-a {
+/* Remove sublinhado de links */
+.dados a {
     text-decoration: none;
-    display: block;
 }
-
-/* ==================== BREAK ==================== */
-br {
-    display: none;
-}
-
-/* ==================== ANIMAÇÃO DE ENTRADA ==================== */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.dados {
-    animation: slideUp 0.6s var(--transicao);
-}
-
-h1 {
-    animation: slideUp 0.6s var(--transicao) 0.1s backwards;
-}
-
-/* ==================== RESPONSIVO - TABLET ==================== */
-@media (max-width: 600px) {
-    h1 {
-        position: static;
-        margin-bottom: 30px;
-        font-size: 26px;
-    }
-
-    .dados {
-        padding: 40px 30px;
-        margin-top: 0;
-        max-width: 100%;
-    }
-
-    label {
-        font-size: 12px;
-    }
-
-    input {
-        padding: 12px 14px;
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
-
-    button {
-        padding: 13px;
-        font-size: 14px;
-        letter-spacing: 0.8px;
-    }
-}
-
-/* ==================== RESPONSIVO - MOBILE ==================== */
-@media (max-width: 400px) {
-    body {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 22px;
-        margin-bottom: 25px;
-    }
-
-    .dados {
-        padding: 35px 20px;
-        border-radius: 14px;
-    }
-
-    label {
-        font-size: 11px;
-        margin-bottom: 8px;
-    }
-
-    input {
-        padding: 11px 13px;
-        font-size: 13px;
-        margin-bottom: 18px;
-        border-radius: 8px;
-    }
-
-    button {
-        padding: 12px;
-        font-size: 13px;
-        border-radius: 8px;
-    }
-}
-
-/* ==================== DARK MODE (OPCIONAL) ==================== */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    }
-
-    .dados {
-        background: #2d2d2d;
-        border-color: rgba(255, 102, 0, 0.15);
-    }
-
-    h1, label {
-        color: var(--cor-primaria);
-    }
-
-    input {
-        background-color: #3d3d3d;
-        border-color: #4d4d4d;
-        color: #ffffff;
-    }
-
-    input:focus {
-        background-color: #2d2d2d;
-        box-shadow: 0 0 0 5px rgba(255, 102, 0, 0.2);
-    }
-
-    input::placeholder {
-        color: #888888;
-    }
-}
+                                                                                

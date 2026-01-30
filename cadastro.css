@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #999999 0%, #808080 100%);
+    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -20,16 +20,17 @@ body {
     max-width: 450px;
     width: 100%;
     padding: 40px;
-    background-color: #f0f0f0af;
+    background-color: #666666af;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border-left: 5px solid #ff6600;
+    
 }
 
 /* Título */
 .cadastro h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 30px;
     font-size: 28px;
     font-weight: 600;
@@ -37,8 +38,8 @@ body {
 
 .cadastro h1::after {
     content: '';
-    display: block;
-    width: 50px;
+    display: flex;
+    width: 80px;
     height: 3px;
     background-color: #ff6600;
     margin: 10px auto 0;
@@ -49,7 +50,7 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #555;
+    color: #ffffff;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -130,4 +131,27 @@ body {
 .cadastro a {
     text-decoration: none;
     display: block;
+    color: #ff6600;
+}
+
+.cadastro a:hover{
+    text-decoration: underline;
+}
+
+.cadastro p{
+    color: #fff;
+}
+
+.login-link{
+    justify-content: space-between;
+    display: flex;
+    margin-top: 20px;
+}
+
+.login-link p{
+margin-right: 100px;
+}
+
+.login-link a{
+margin-left: 10px;
 }
