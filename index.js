@@ -6,8 +6,8 @@ function verificarCredenciais() {
     const senhaAdm = "1234";
 
     if (email === emailAdm && senha === senhaAdm) {
-        window.location.href = "adm.html";
+        window.location.href = "/adm/adm.html";
     } else {
-        window.location.href = "agendamento.html";
+        window.location.href = "/agendamento/agendamento.html";
     }
 }
