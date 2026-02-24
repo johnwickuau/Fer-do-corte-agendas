@@ -71,3 +71,26 @@ body {
     margin-bottom: 0%;
     filter: drop-shadow(0 0 10px rgba(255,102,0,0.35));
 }
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #ff6600, #ff8533);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(255, 102, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5);
+}
+
+.btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}

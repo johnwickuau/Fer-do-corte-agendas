@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <title>Tabela de Agendamentos</title>
+    <title>Recibo - Fer du Corte</title>
     <link rel="stylesheet" href="recibo.css">
 </head>
 
 <body>
-    <h1>Agendamento concluido</h1>
-    <h2>Segue abaixo suas informações</h2>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Serviço do Corte</th>
-                <th>Dia</th>
-                <th>Horário</th>
-                <th>Valor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <div class="container">
 
-            <tr>
-                <td>Lucas</td>
-                <td>Corte + Barba</td>
-                <td>27/02/2026</td>
-                <td>10:00</td>
-                <td>R$ 55,00</td>
-            </tr>
-        </tbody>
-    </table>
+        <img src="../fotos/logo.png" class="logo">
 
-    <button id="voltarBtn" onclick="window.location.href='index.html'">
-        Voltar e Editar
-    </button>
+        <h1>Agendamento Concluído ✅</h1>
+        <p class="subtitulo">Confira abaixo os detalhes do seu agendamento</p>
 
-    <img src="../fotos/logo.png" width = 400px ="">
+        <div class="tabela-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Serviço</th>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lucas</td>
+                        <td>Corte + Barba</td>
+                        <td>27/02/2026</td>
+                        <td>10:00</td>
+                        <td>R$ 55,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="../index.html" class="btn-voltar">Voltar para tela inicial</a>
+
+    </div>
 
 </body>
-
 </html>

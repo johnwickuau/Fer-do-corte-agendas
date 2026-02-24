@@ -1,128 +1,97 @@
-/* =========================
-   RESET
-========================= */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
+/* Fundo */
 body {
+    height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
-    min-height: 100vh;
-    color: #fff;
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
-/* =========================
-   TÍTULOS
-========================= */
+/* Container central */
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 6px solid #ff6600;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 180px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255,102,0,0.4));
+}
+
+/* Títulos */
 h1 {
-    font-size: 30px;
     margin-bottom: 10px;
-    font-weight: 700;
-    text-align: center;
-    position: relative;
 }
 
-h1::after {
-    content: '';
-    display: block;
-    width: 90px;
-    height: 4px;
-    background-color: #ff6600;
-    margin: 12px auto 0;
-    border-radius: 2px;
-}
-
-h2 {
+.subtitulo {
+    color: #ccc;
     margin-bottom: 30px;
-    font-weight: 400;
-    text-align: center;
-    color: #ddd;
 }
 
-/* =========================
-   TABELA
-========================= */
+/* Tabela */
+.tabela-box {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
-    max-width: 700px;
-    background-color: #666666af;
-    border-radius: 14px;
-    overflow: hidden;
     border-collapse: collapse;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* Cabeçalho */
 th {
-    background-color: #333;
-    padding: 16px;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 3px solid #ff6600;
+    background: #ff6600;
+    padding: 15px;
+    font-weight: bold;
 }
 
-/* Conteúdo */
 td {
     padding: 15px;
-    text-align: center;
-    font-size: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Efeito hover nas linhas */
-tbody tr:hover {
-    background-color: rgba(255, 102, 0, 0.15);
+tr:hover td {
+    background: rgba(255,102,0,0.15);
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-@media (max-width: 600px) {
-
-    h1 {
-        font-size: 24px;
-    }
-
-    th, td {
-        font-size: 14px;
-        padding: 12px;
-    }
-}
-
-/* =========================
-   BOTÃO VOLTAR
-========================= */
-#voltarBtn {
-    width: 100%;
-    max-width: 360px;
-    padding: 15px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-
-    background-color: #333;
+/* Botão */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #ff6600, #ff8533);
+    border-radius: 8px;
+    font-weight: bold;
     color: #fff;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(255,102,0,0.3);
 }
 
-#voltarBtn:hover {
-    background-color: #ff6600;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(255, 102, 0, 0.45);
+.btn-voltar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255,102,0,0.5);
+}
+
+.btn-voltar:active {
+    transform: translateY(0);
 }
