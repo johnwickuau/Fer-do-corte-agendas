@@ -1,166 +1,95 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =========================
-   BODY
-========================= */
+/* FUNDO */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
-    min-height: 100vh;
+    height: 100vh;
+    background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    padding: 20px;
 }
 
-/* =========================
-   CONTAINERS
-========================= */
-.data,
-.Agendeseuhorario,
-.Serviço {
-    background-color: #666666af;
-    padding: 40px;
-    border-radius: 14px;
-    width: 100%;
-    max-width: 520px;
+/* CONTAINER CENTRAL */
+.container {
+    width: 90%;
+    max-width: 500px;
+}
+
+/* TÍTULO */
+.titulo-principal {
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    border-left: 5px solid #ff6600;
-    margin-bottom: 25px;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 28px;
 }
 
-/* =========================
-   TÍTULOS
-========================= */
-.data h1,
-.Agendeseuhorario h1,
-.Serviço h2 {
-    font-size: 24px;
+/* CARD */
+.card {
+    background-color: #5a5a5a;
+    padding: 30px;
+    border-radius: 15px;
     margin-bottom: 25px;
-    font-weight: 700;
     position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-.data h1::after,
-.Agendeseuhorario h1::after,
-.Serviço h2::after {
-    content: '';
-    display: block;
-    width: 75px;
-    height: 4px;
+/* BARRA LARANJA LATERAL */
+.card::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 20px;
+    width: 5px;
+    height: 80%;
     background-color: #ff6600;
-    margin: 12px auto 0;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
-/* =========================
-   SELECTS (DATA / HORÁRIO / SERVIÇO)
-========================= */
-.data select,
-#agenda,
-#serviço {
+/* TITULO CARD */
+.card h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* INPUT E SELECT */
+input, select {
     width: 100%;
-    padding: 14px 16px;
-    font-size: 16px;
+    padding: 12px;
     border-radius: 8px;
-    border: 2px solid transparent;
-    background-color: #f9f9f9;
-    color: #333;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    appearance: none;
-    font-weight: 600;
-}
-
-/* Hover */
-.data select:hover,
-#agenda:hover,
-#serviço:hover {
-    border-color: #ff6600;
-}
-
-/* Focus */
-.data select:focus,
-#agenda:focus,
-#serviço:focus {
-    outline: none;
-    border-color: #ff6600;
-    box-shadow: 0 0 8px rgba(255, 102, 0, 0.3);
-    background-color: #fff;
-}
-
-/* =========================
-   BOTÃO CONFIRMAR
-========================= */
-button {
-    width: 100%;
-    max-width: 520px;
-    padding: 16px;
-    background-color: #333;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    font-size: 15px;
+    outline: none;
 }
 
-/* Link dentro do botão */
-button a {
-    text-decoration: none;
-    color: #fff;
+/* BOTÃO */
+.btn-confirmar {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #2e2e2e;
+    color: white;
+    font-weight: bold;
     font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Hover botão */
-button:hover {
+.btn-confirmar:hover {
     background-color: #ff6600;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
 }
-
-/* Active */
-button:active {
-    transform: translateY(0);
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
-@media (max-width: 600px) {
-
-    .data,
-    .Agendeseuhorario,
-    .Serviço {
-        padding: 30px 22px;
-    }
-
-    .data h1,
-    .Agendeseuhorario h1,
-    .Serviço h2 {
-        font-size: 20px;
-    }
-
-    .data select,
-    #agenda,
-    #serviço {
-        font-size: 15px;
-    }
-
-    button a {
-        font-size: 15px;
-    }
+.btn-confirmar {
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }

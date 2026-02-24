@@ -2,41 +2,38 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>ADM</title>
+    <title>Painel Administrativo</title>
     <link rel="stylesheet" href="adm.css">
 </head>
 <body>
-    <h1>Bem vindo adm</h1>
-    <p>Aqui estao os horarios</p>
-    <table border="1">
-        <tr>
-            <th>Nome</th>
-            <th>Serviço</th>
-            <th>Data</th>
-            <th>Hora</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>Matheus Silva</td>
-            <td>Corte de Cabelo</td>
-            <td>2024-07-01</td>
-            <td>14:00</td>
-            <td>R$ 30,00</td>
-        </tr>
-        <tr>
-            <td>José Carlos</td>
-            <td>Barba</td>
-            <td>2024-07-01</td>
-            <td>15:00</td>
-            <td>R$ 20,00</td>
-        </tr>
-        <tr>
-            <td>Carlos Souza</td>
-            <td>Corte e Barba</td>
-            <td>2024-07-02</td>
-            <td>10:00</td>
-            <td>R$ 50,00</td>
-        </tr>
-    </table>
+
+    <div class="container">
+
+        <h1>Painel do Barbeiro</h1>
+
+        <div class="topo">
+            <button id="limparTudo">Limpar Tudo</button>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Serviço</th>
+                        <th>Horário</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="listaAgendamentos">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="adm.js"></script>
+
 </body>
 </html>

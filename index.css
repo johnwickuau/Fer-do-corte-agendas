@@ -1,96 +1,177 @@
-/* Reset */
+/* RESET */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo com imagem */
+/* BASE */
 body {
+    font-family: 'Poppins', sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    padding: 18px 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 100%;
+    padding: 0 35px; /* logo mais pra esquerda */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO TOPO */
+.logo-topo {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #ff6600;
+    cursor: pointer;
+}
+
+/* MENU */
+.menu a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: #ff6600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff6600;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
     height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('https://images.unsplash.com/photo-1517832606299-7ae9b720a186') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 80px; /* espaço navbar */
 }
 
-/* Camada escura por cima da imagem */
 .overlay {
     width: 100%;
     height: 100%;
-    background: rgba(20, 20, 20, 0.85);
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(15,15,15,0.95));
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Caixa central */
+/* CONTEÚDO CENTRAL */
 .conteudo {
     text-align: center;
-    color: #fff;
-    padding: 60px;
-    background-color: rgba(102, 102, 102, 0.25);
-    border-left: 6px solid #ff6600;
-    border-radius: 12px;
-    backdrop-filter: blur(6px);
-    align-items: center;
+    max-width: 650px;
+    padding: 50px;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Título */
-.conteudo h1 {
-    font-size: 34px;
-    margin-bottom: 55px;
-}
-
-.conteudo h3 {
-    font-weight: 400;
-    margin-bottom: 30px;
-    color: #ddd;
-}
-
-/* Botão */
-.conteudo button {
-    padding: 14px 30px;
-    background-color: #ff6600;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.conteudo button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
-}
 .logo {
-    width: 200px;
-    margin-bottom: 0%;
-    filter: drop-shadow(0 0 10px rgba(255,102,0,0.35));
+    width: 150px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 20px rgba(255,102,0,0.4));
 }
-.btn {
+
+.conteudo h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.slogan {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.slogan span {
+    color: #ff6600;
+    font-weight: 700;
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-principal {
     display: inline-block;
-    padding: 14px 35px;
+    padding: 16px 50px;
     background: linear-gradient(135deg, #ff6600, #ff8533);
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
     text-decoration: none;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 18px rgba(255, 102, 0, 0.3);
+    transition: 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255,102,0,0.4);
 }
 
-.btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5);
+.btn-principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255,102,0,0.6);
 }
 
-.btn:active {
-    transform: translateY(0px);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .menu {
+        display: none; /* depois podemos fazer menu mobile */
+    }
+
+    .conteudo {
+        padding: 30px;
+    }
+
+    .conteudo h1 {
+        font-size: 26px;
+    }
+
+    .slogan {
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 120px;
+    }
 }

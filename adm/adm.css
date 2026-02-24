@@ -1,124 +1,91 @@
-/* =========================
-   RESET GERAL
-========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #141414, #4b4b4b);
     min-height: 100vh;
-    color: #fff;
     padding: 40px;
+    color: white;
 }
 
-/* =========================
-   TÍTULO
-========================= */
-h1 {
+.container {
+    max-width: 1000px;
+    margin: auto;
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 32px;
-    font-weight: 700;
-    position: relative;
+}
+
+h1 {
+    margin-bottom: 30px;
 }
 
 h1::after {
-    content: '';
-    display: block;
-    width: 90px;
+    content: "";
+    width: 80px;
     height: 4px;
-    background-color: #ff6600;
-    margin: 12px auto 0;
-    border-radius: 2px;
+    background: #ff6600;
+    display: block;
+    margin: 10px auto 0;
 }
 
-/* =========================
-   TEXTO DE APOIO
-========================= */
-p {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 16px;
-    opacity: 0.9;
+.topo {
+    margin-bottom: 20px;
+    text-align: right;
 }
 
-/* =========================
-   TABELA
-========================= */
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#limparTudo {
+    background: #b00020;
+    color: white;
+}
+
+#limparTudo:hover {
+    background: #ff1744;
+}
+
+.tabela-container {
+    background: #444;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
 table {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
     border-collapse: collapse;
-    background-color: #666666af;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* =========================
-   CABEÇALHO DA TABELA
-========================= */
 th {
-    background-color: #333;
-    color: #fff;
-    padding: 16px;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    background: #222;
+    padding: 12px;
     border-bottom: 3px solid #ff6600;
 }
 
-/* =========================
-   LINHAS DA TABELA
-========================= */
 td {
-    padding: 14px;
-    text-align: center;
-    font-size: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-/* =========================
-   EFEITO HOVER NAS LINHAS
-========================= */
-tr:hover td {
-    background-color: rgba(255, 102, 0, 0.15);
-    transition: background-color 0.3s ease;
+tr:hover {
+    background: rgba(255,102,0,0.1);
 }
 
-/* =========================
-   ÚLTIMA LINHA SEM BORDA
-========================= */
-tr:last-child td {
-    border-bottom: none;
+.excluirBtn {
+    background: #ff6600;
+    color: white;
 }
 
-/* =========================
-   RESPONSIVO (CELULAR)
-========================= */
-@media (max-width: 768px) {
-
-    body {
-        padding: 20px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
+.excluirBtn:hover {
+    background: #ff7a1a;
 }
