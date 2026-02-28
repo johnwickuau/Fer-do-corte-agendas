@@ -12,16 +12,19 @@ function renderizar() {
 
     agendamentos.forEach((ag, index) => {
 
+        const status = ag.status || "pendente";
+
         const linha = `
             <tr>
                 <td>${ag.nome || "Cliente"}</td>
                 <td>${ag.servico}</td>
                 <td>${ag.horario}</td>
                 <td>${ag.data || "-"}</td>
+                <td><span class="status ${status}">${status.charAt(0).toUpperCase() + status.slice(1)}</span></td>
                 <td>
-                    <button class="excluirBtn" onclick="excluir(${index})">
-                        Excluir
-                    </button>
+                    <button class="aceitarBtn" onclick="aceitar(${index})">Aceitar</button>
+                    <button class="rejeitarBtn" onclick="rejeitar(${index})">Rejeitar</button>
+                    <button class="excluirBtn" onclick="excluir(${index})">Excluir</button>
                 </td>
             </tr>
         `;
@@ -32,6 +35,20 @@ function renderizar() {
 
 function excluir(index) {
     agendamentos.splice(index, 1);
+    localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
+    renderizar();
+}
+
+function aceitar(index) {
+    if (!agendamentos[index]) return;
+    agendamentos[index].status = "aceito";
+    localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
+    renderizar();
+}
+
+function rejeitar(index) {
+    if (!agendamentos[index]) return;
+    agendamentos[index].status = "rejeitado";
     localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
     renderizar();
 }

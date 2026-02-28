@@ -3,25 +3,30 @@ const btnConfirmar = document.querySelector(".btn-confirmar");
 const inputData = document.getElementById("data");
 const selectHorario = document.getElementById("horario");
 const selectServico = document.getElementById("servico");
+const inputNome = document.getElementById("nome");
 
 // Evento de clique
-btnConfirmar.addEventListener("click", function () {
+btnConfirmar.addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const nome = inputNome ? inputNome.value.trim() : "";
     const data = inputData.value;
     const horario = selectHorario.value;
     const servico = selectServico.value;
 
     // Validação simples
-    if (data === "" || horario === "" || servico === "") {
+    if (nome === "" || data === "" || horario === "" || servico === "") {
         alert("Preencha todos os campos!");
         return;
     }
 
-    // Criando objeto do agendamento
+    // Criando objeto do agendamento com status padrão
     const agendamento = {
+        nome: nome,
         data: data,
         horario: horario,
-        servico: servico
+        servico: servico,
+        status: "pendente"
     };
 
     // Pegando agendamentos já salvos
@@ -35,8 +40,6 @@ btnConfirmar.addEventListener("click", function () {
 
     alert("Agendamento salvo com sucesso! ✅");
 
-    // Limpando campos
-    inputData.value = "";
-    selectHorario.selectedIndex = 0;
-    selectServico.selectedIndex = 0;
+    // Opcional: redirecionar para confirmação
+    window.location.href = "confirmacao.html";
 });
