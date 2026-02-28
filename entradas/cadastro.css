@@ -1,169 +1,247 @@
-/* ================= RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
 }
 
-/* ================= BODY ================= */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* BOTAO MENU */
+
+.voltar-menu{
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+color:#ff6600;
+
+font-size:16px;
+
+font-weight:600;
+
+text-decoration:none;
+
+background:rgba(0,0,0,0.6);
+
+padding:8px 14px;
+
+border-radius:6px;
+
+transition:0.3s;
+
+z-index:10;
+
 }
 
-/* ================= CONTAINER ================= */
-.cadastro {
-    max-width: 450px;
-    width: 100%;
-    padding: 45px 40px;
-    background-color: rgba(102, 102, 102, 0.75);
-    backdrop-filter: blur(8px);
-    border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    border-left: 6px solid #ff6600;
-    transition: transform 0.3s ease;
+.voltar-menu:hover{
+
+background:#ff6600;
+
+color:white;
+
 }
 
-.cadastro:hover {
-    transform: translateY(-3px);
+/* CONTAINER */
+
+.container{
+
+display:flex;
+
+height:100vh;
+
 }
 
-/* ================= TÍTULO ================= */
-.cadastro h1 {
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 35px;
-    font-size: 28px;
-    font-weight: 600;
-    position: relative;
+/* IMAGEM BARBEARIA */
+
+.lado-imagem{
+
+flex:1;
+
+background-image:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c");
+
+background-size:cover;
+
+background-position:center;
+
 }
 
-.cadastro h1::after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 3px;
-    background-color: #ff6600;
-    margin: 10px auto 0;
-    border-radius: 2px;
+/* LADO FORM */
+
+.lado-form{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#0f0f0f,#3a3a3a);
+
 }
 
-/* ================= LABELS ================= */
-.cadastro label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* CARD */
+
+.cadastro{
+
+width:380px;
+
+padding:40px;
+
+background:rgba(66, 66, 66, 0.9);
+
+border-radius:12px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+
+border-left:5px solid #ff6600;
+
 }
 
-/* ================= INPUTS ================= */
-.cadastro input[type="text"],
-.cadastro input[type="email"],
-.cadastro input[type="password"] {
-    width: 100%;
-    padding: 13px 15px;
-    margin-bottom: 22px;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 14px;
-    background-color: #f3f3f3;
-    transition: all 0.3s ease;
+/* TITULO */
+
+.cadastro h1{
+
+text-align:center;
+
+color:white;
+
+margin-bottom:25px;
+
 }
 
-/* Placeholder */
-.cadastro input::placeholder {
-    color: #999;
+/* LABEL */
+
+.cadastro label{
+
+color:#ccc;
+
+font-size:13px;
+
+font-weight:600;
+
 }
 
-/* Foco */
-.cadastro input:focus {
-    outline: none;
-    border-color: #ff6600;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+/* INPUT */
+
+.cadastro input{
+
+width:100%;
+
+padding:12px;
+
+margin:8px 0 18px;
+
+border:none;
+
+border-radius:6px;
+
+background:#e9e9e9;
+
+font-size:14px;
+
 }
 
-/* ================= BOTÃO ================= */
-.cadastro button {
-    width: 100%;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
+/* FOCUS */
+
+.cadastro input:focus{
+
+outline:none;
+
+box-shadow:0 0 8px #ff6600;
+
 }
 
-/* Efeito hover animado */
-.cadastro button::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #ff6600;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: -1;
+/* BOTAO */
+
+.cadastro button{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:6px;
+
+background:#ff6600;
+
+color:white;
+
+font-weight:bold;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:0.3s;
+
 }
 
-.cadastro button:hover::before {
-    transform: translateX(0);
+.cadastro button:hover{
+
+background:#ff7f24;
+
+transform:translateY(-2px);
+
 }
 
-.cadastro button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+/* LOGIN LINK */
+
+.login-link{
+
+margin-top:15px;
+
+display:flex;
+
+justify-content:center;
+
+gap:5px;
+
+font-size:14px;
+
 }
 
-.cadastro button:active {
-    transform: translateY(0);
+.login-link p{
+
+color:#ccc;
+
 }
 
-/* ================= LOGIN LINK ================= */
-.login-link {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    font-size: 14px;
+.login-link a{
+
+color:#ff6600;
+
+text-decoration:none;
+
+font-weight:600;
+
 }
 
-.login-link p {
-    color: #fff;
+.login-link a:hover{
+
+text-decoration:underline;
+
 }
 
-.login-link a {
-    color: #ff6600;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
+/* RESPONSIVO */
+
+@media (max-width:900px){
+
+.container{
+
+flex-direction:column;
+
 }
 
-.login-link a:hover {
-    text-decoration: underline;
+.lado-imagem{
+
+height:250px;
+
 }
 
-/* ================= RESPONSIVO ================= */
-@media (max-width: 480px) {
-    .cadastro {
-        padding: 30px 25px;
-    }
-
-    .cadastro h1 {
-        font-size: 22px;
-    }
 }

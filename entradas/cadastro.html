@@ -1,58 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | Fer du Corte</title>
+<html lang="pt-br">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cadastro.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro - Fer du Corte</title>
+
+<link rel="stylesheet" href="cadastro.css">
+
 </head>
+
 <body>
+
+<a href="../index.html" class="voltar-menu">← Menu</a>
 
 <div class="container">
 
-    <form id="formCadastro" class="cadastro">
-        <h1>Crie sua conta</h1>
+<div class="lado-imagem"></div>
 
-        <div class="input-group">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" required>
-        </div>
+<div class="lado-form">
 
-        <div class="input-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required>
-        </div>
+<form class="cadastro" id="formCadastro">
 
-        <div class="input-group">
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" maxlength="14" required>
-        </div>
+<h1>Crie sua conta</h1>
 
-        <div class="input-group">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" required>
-        </div>
+<label>Nome completo</label>
+<input type="text" id="nome" placeholder="Seu nome" required>
 
-        <div class="input-group">
-            <label for="confirmar">Confirmar senha</label>
-            <input type="password" id="confirmar" required>
-        </div>
+<label>Email</label>
+<input type="email" id="email" placeholder="seu@email.com" required>
 
-        <button type="submit">Cadastrar</button>
+<label>CPF</label>
+<input type="text" id="cpf" placeholder="000.000.000-00" required>
 
-        <div class="login-link">
-            <p>Já tem uma conta?</p>
-            <a href="../login/login.html">Faça login</a>
-        </div>
+<label>Senha</label>
+<input type="password" id="senha" placeholder="Digite sua senha" required>
 
-        <p id="mensagem"></p>
+<label>Confirmar senha</label>
+<input type="password" id="confirmarSenha" placeholder="Confirme a senha" required>
 
-    </form>
+<button type="submit">Cadastrar</button>
+
+<div class="login-link">
+
+<p>Já tem conta?</p>
+<a href="../entradas/login.html">Fazer login</a>
+
+</div>
+
+</form>
+
+</div>
 
 </div>
 
 <script src="cadastro.js"></script>
+
 </body>
 </html>

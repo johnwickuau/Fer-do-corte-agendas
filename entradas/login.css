@@ -1,134 +1,199 @@
-/* Reset geral */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, sans-serif;
 }
 
-/* Body */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #141414 0%, #5e5d5d 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 20px;
+/* BOTAO MENU */
+
+.voltar-menu{
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+color:#ff6600;
+
+font-weight:600;
+
+text-decoration:none;
+
+background:rgba(54, 54, 54, 0.6);
+
+padding:8px 14px;
+
+border-radius:6px;
+
+transition:0.3s;
+
 }
 
-/* Título principal */
-body > h1 {
-    margin-bottom: 30px;
-    font-size: 28px;
-    font-weight: 600;
-    position: relative;
+.voltar-menu:hover{
+
+background:#ff6600;
+
+color:white;
+
 }
 
-body > h1::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #ff6600;
-    margin: 10px auto 0;
+/* CONTAINER */
+
+.container{
+
+display:flex;
+
+height:100vh;
+
 }
 
-/* Container do login */
-.dados {
-    max-width: 450px;
-    width: 1000px;
-    padding: 60px;
-    background-color: #666666af;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    border-left: 5px solid #f86707;
+/* IMAGEM */
+
+.lado-imagem{
+    flex: 1;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),
+    url("https://images.unsplash.com/photo-1621605815971-fbc98d665033");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Labels */
-.dados label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* LADO LOGIN */
+
+.lado-form{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#0f0f0f,#3a3a3a);
+
 }
 
-/* Inputs */
-.dados input[type="email"],
-.dados input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 14px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
+/* CARD LOGIN */
+
+.login-box{
+
+width:350px;
+
+padding:40px;
+
+background:rgba(59, 59, 59, 0.9);
+
+border-radius:12px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+
+border-left:5px solid #ff6600;
+
 }
 
-/* Placeholder */
-.dados input::placeholder {
-    color: #aaa;
+/* TITULO */
+
+.login-box h1{
+
+text-align:center;
+
+color:white;
+
+margin-bottom:25px;
+
 }
 
-/* Focus */
-.dados input:focus {
-    outline: none;
-    border-color: #ff6600;
-    background-color: #fff;
-    box-shadow: 0 0 8px rgba(255, 102, 0, 0.2);
+/* LABEL */
+
+.login-box label{
+
+color:#ccc;
+
+font-size:13px;
+
+font-weight:600;
+
 }
 
-/* Botão */
-.dados button {
-    width: 100%;
-    padding: 14px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
+/* INPUT */
+
+.login-box input{
+
+width:100%;
+
+padding:12px;
+
+margin:8px 0 18px;
+
+border:none;
+
+border-radius:6px;
+
+background:#e9e9e9;
+
 }
 
-/* Efeito hover */
-.dados button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: #ff6600;
-    transition: left 0.3s ease;
-    z-index: -1;
+/* BOTAO */
+
+.login-box button{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:6px;
+
+background:#ff6600;
+
+color:white;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
 }
 
-.dados button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+.login-box button:hover{
+
+background:#ff7f24;
+
+transform:translateY(-2px);
+
 }
 
-.dados button:hover::before {
-    left: 0;
+/* LINK */
+
+.cadastro-link{
+
+margin-top:15px;
+
+text-align:center;
+
+color:#ccc;
+
 }
 
-.dados button:active {
-    transform: translateY(0);
+.cadastro-link a{
+
+color:#ff6600;
+
+text-decoration:none;
+
+font-weight:600;
+
 }
 
-/* Remove sublinhado de links */
-.dados a {
-    text-decoration: none;
+.cadastro-link a:hover{
+
+text-decoration:underline;
+
 }
-                                                                                

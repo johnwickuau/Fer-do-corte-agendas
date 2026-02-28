@@ -1,29 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="./login.css">
-    <script src="./index.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Fer du Corte</title>
+
+<link rel="stylesheet" href="login.css">
+
+<script src="login.js" defer></script>
+
 </head>
+
 <body>
 
-<h1>Faça seu login</h1>
+<a href="../index.html" class="voltar-menu">← Menu</a>
 
-<div class="dados">
-    <label>Email</label>
-    <input type="email" id="email">
+<div class="container">
 
-    <br><br>
+<div class="lado-imagem"></div>
 
-    <label>Senha</label>
-    <input type="password" id="senha">
+<div class="lado-form">
 
-    <br><br>
+<div class="login-box">
 
-    <button onclick="verificarCredenciais()">Logar</button>
+<h1>Entrar</h1>
 
-    
+<label>Email</label>
+<input type="email" id="email" placeholder="seu@email.com">
+
+<label>Senha</label>
+<input type="password" id="senha" placeholder="Digite sua senha">
+
+<button onclick="verificarCredenciais()">Logar</button>
+
+<p class="cadastro-link">
+Não tem conta? <a href="../entradas/cadastro.html">Cadastre-se</a>
+</p>
+
+</div>
+
+</div>
+
 </div>
 
 </body>
